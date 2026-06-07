@@ -1,8 +1,10 @@
+JavaScript
 require("dotenv").config();
 const express = require("express");
 const helmet = require("helmet");
 const cors = require("cors");
 const rateLimit = require("express-rate-limit");
+const path = require("path"); //se der erro foi isso 1
 
 const routes = require("./routes");
 const errorHandler = require("./middlewares/errorHandler");
@@ -45,10 +47,18 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// se der erro foi isso 2
+app.use(express.static(path.join(__dirname, '../frontend')));
+
 app.use("/api", routes);
 
 app.get("/health", (_req, res) => {
   res.json({ status: "ok", app: "Bíko API", timestamp: new Date().toISOString() });
+});
+
+//se der erro foi isso 3
+app.get("*", (_req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/index.html'));
 });
 
 app.use(errorHandler);
