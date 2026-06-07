@@ -47,20 +47,9 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// se der erro foi isso 2
-app.use(express.static(path.join(__dirname, '../frontend')));
+const frontendPath = path.resolve(__dirname, '..', 'frontend');
+app.use(express.static(frontendPath));
 
-app.use("/api", routes);
-
-app.get("/health", (_req, res) => {
-  res.json({ status: "ok", app: "Bíko API", timestamp: new Date().toISOString() });
-});
-
-//se der erro foi isso 3
 app.get("*", (_req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/index.html'));
+  res.sendFile(path.join(frontendPath, 'index.html'));
 });
-
-app.use(errorHandler);
-
-module.exports = app;
