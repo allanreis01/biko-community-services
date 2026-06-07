@@ -2,6 +2,11 @@
 
 Bíko é uma plataforma digital que conecta moradores a profissionais locais confiáveis, facilitando a busca, solicitação e contratação de serviços dentro da própria comunidade.
 
+## 🚀 Acesso ao Projeto
+
+* **🔗 Site Online (Frontend):** [https://delicate-cupcake-89fd7c.netlify.app](https://delicate-cupcake-89fd7c.netlify.app)
+* **⚙️ API (Backend):** [https://biko-api-production-5a77.up.railway.app](https://biko-api-production-5a77.up.railway.app)
+
 A solução foi criada para valorizar profissionais autônomos de bairros e regiões locais, oferecendo uma experiência simples, segura e acessível para clientes que precisam contratar serviços como eletricistas, encanadores, costureiras, pintores, diaristas e outros prestadores.
 
 ---
